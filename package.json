@@ -4,7 +4,8 @@
   "description": "Name builder app from Flipcode",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "nameData": "node ./nameData.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/aevalo/name-builder/issues"
   },
-  "homepage": "https://github.com/aevalo/name-builder#readme"
+  "homepage": "https://github.com/aevalo/name-builder#readme",
+  "devDependencies": {
+    "node-xsltproc": "^1.1.1"
+  }
 }
