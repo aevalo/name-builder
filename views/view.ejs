@@ -1,3 +1,15 @@
+<%- contentFor('extraHead') %>
+<script src="/js/lib/jquery/dist/jquery.min.js"></script>
+<script src="/js/lib/underscore/underscore-min.js"></script>
+<script src="/js/lib/backbone/backbone-min.js"></script>
+<script src="/js/greeting.js"></script>
+<script>
+  $(() => {
+    let thing = new Greet('World');
+    thing.render();
+  });
+</script>
+
 <%- contentFor('header') %>
 <h1 class="page-title"><%= _locals.title %></h1>
 
@@ -9,3 +21,5 @@
 This is part of the body.
 
 <h1 class="page-message"><%= message %></h1>
+
+<div class="greet"></div>

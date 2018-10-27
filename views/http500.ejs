@@ -6,5 +6,7 @@
 
 <%- contentFor('body') %>
 <pre class="body-error">
-  <%= stack %>
+  <% for (let line of stack) { %>
+    <span class="line"><%= line -%></span>
+  <% } %>
 </pre>
