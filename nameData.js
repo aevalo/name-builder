@@ -1,13 +1,21 @@
 const xsltproc = require('node-xsltproc');
+const jsonfile = require('jsonfile');
+const fs = require('fs');
 
-xsltproc({xsltproc_path: '/usr/bin'}).transform(['./NameData.xslt', './NameData.xml']).then((data) => {
+const xmlFile = `${__dirname}/data/xml/NameData.xml`;
+const xsltFile = `${__dirname}/data/xml/NameData.xslt`;
+xsltproc({xsltproc_path: '/usr/bin'}).transform([xsltFile, xmlFile]).then((data) => {
   try {
-    let initialData = JSON.parse(data.result);
-    console.log(JSON.stringify(initialData, null, 2));
+    fs.mkdir(`${__dirname}/data/json`, { recursive: true }, (err) => {
+      if (err) throw err;
+      let nameData = JSON.parse(data.result);
+      const jsonFile = `${__dirname}/data/json/namedata.json`;
+      jsonfile.writeFile(jsonFile, nameData).catch(error => console.error(error.message));
+    });
   }
   catch(err) {
-    console.log('Failed to load initial data:', err.message);
+    console.error('Failed to load initial data:', err.message);
   }
 }, (reason) => {
-  console.log('Rejected:', reason.message);
+  console.error('Failed to transform XML:', reason.message);
 });

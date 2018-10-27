@@ -1,0 +1,10 @@
+<%- contentFor('header') %>
+<div class="header-error">
+  <h1><%= name %></h1>
+  <h3><pre><%= message %></pre></h3>
+</div>
+
+<%- contentFor('body') %>
+<pre class="body-error">
+  <%= stack %>
+</pre>

@@ -1,0 +1,16 @@
+.page-title {
+  text-decoration: underline;
+}
+
+.page-message {
+  color: blue;
+}
+
+.header-error {
+  border: 2px solid #cc0000;
+  background-color: #ff6666;
+}
+
+.body-error {
+  background-color: #ff9933;
+}
