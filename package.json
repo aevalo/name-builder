@@ -4,16 +4,15 @@
   "description": "Name builder app from Flipcode",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run-server": "python3 -m http.server"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/aevalo/name-builder.git"
   },
   "keywords": [
-    "CouchDB",
-    "Backbone.js",
-    "Underscore.js"
+    "Name generation"
   ],
   "author": "Arttu Valo <arttu.valo@gmail.com>",
   "license": "MIT",
